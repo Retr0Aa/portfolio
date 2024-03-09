@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/images/mypc.png">
+
     <title>Alexander Buchkov</title>
 
     <!-- Bootstrap CSS -->
@@ -27,9 +30,21 @@
         </button>
     </div>
     <div>
+        <button id="show-dialog-projects" class="desktop-icon show-button" onclick="showDialogProjects();">
+            <img width="50px" src="images/documents.png">
+            <p>Projects</p>
+        </button>
+    </div>
+    <div>
         <button id="show-dialog-skills" class="desktop-icon show-button" onclick="showDialogSkills();">
             <img width="50px" src="images/ie.png">
             <p>Skills</p>
+        </button>
+    </div>
+    <div>
+        <button id="show-dialog-github" class="desktop-icon show-button" onclick="showDialogGithub();">
+            <img width="50px" src="images/github.png">
+            <p>GitHub</p>
         </button>
     </div>
 
@@ -53,6 +68,24 @@
             }
         }
 
+        _showDialogButtonProjects = document.getElementById('show-dialog-projects');
+        var dialogProjects;
+        function showDialogProjects() {
+            //_showDialogButtonSkills.disabled = true;
+            if (!dialogProjects) {
+                var id = 'dialog-projects';
+                // Instanciate the Dialog Box
+                dialogProjects = new DialogBox(id, callbackDialog);
+            }
+            // Show Dialog Box
+            dialogProjects.showDialog();
+
+            // Receive result from Dialog Box
+            function callbackDialog(btnName) {
+                _showDialogButtonProjects.disabled = false;
+                _showDialogButtonProjects.focus();
+            }
+        }
 
         _showDialogButtonSkills = document.getElementById('show-dialog-skills');
         var dialogSkills;
@@ -73,6 +106,24 @@
             }
         }
 
+        _showDialogButtonGithub = document.getElementById('show-dialog-github');
+        var dialogGithub;
+        function showDialogGithub() {
+            //_showDialogButtonSkills.disabled = true;
+            if (!dialogGithub) {
+                var id = 'dialog-github';
+                // Instanciate the Dialog Box
+                dialogGithub = new DialogBox(id, callbackDialog);
+            }
+            // Show Dialog Box
+            dialogGithub.showDialog();
+
+            // Receive result from Dialog Box
+            function callbackDialog(btnName) {
+                _showDialogButtonGithub.disabled = false;
+                _showDialogButtonGithub.focus();
+            }
+        }
     </script>
 
     <div id="dialog-aboutme" class="dialog" style="min-width:400px; min-height:280px;">
@@ -97,6 +148,28 @@
         </div>
     </div>
 
+    <div id="dialog-projects" class="dialog" style="min-width:400px; min-height:280px;">
+        <div class="titlebar">Projects</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark"
+            name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
+        <div class="content">
+            <p>Most my projects can be found on <a href="https://github.com/Retr0Aa">GitHub</a></p>
+            <ul>
+                <li>Hero Jumper</li>
+                <li>Idle Clicker</li>
+                <li>Fusion Points System</li>
+                <li>Text2Web</li>
+                <li>PensaBul</li>
+            </ul>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <div id="dialog-skills" class="dialog" style="min-width:400px; min-height:280px;">
         <div class="titlebar">Skills</div>
         <button class="btn btn-sm mr-2 btn-primary border-dark"
@@ -109,6 +182,22 @@
                 <li>Javascript</li>
                 <li>C++</li>
             </ol>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-github" class="dialog" style="min-width:400px; min-height:280px;">
+        <div class="titlebar">GitHub</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark"
+            name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
+        <div class="content">
+            <h1>You can find me on GitHub</h1>
+            <a href="https://github.com/Retr0Aa">Go to GitHub</a>
         </div>
         <div class="buttonpane">
             <div class="buttonset">

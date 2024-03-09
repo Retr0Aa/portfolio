@@ -22,6 +22,10 @@ footer {
     border: 0;
 }
 
+.desktop-icon img {
+    image-rendering: pixelated;
+}
+
 button:focus {
     outline:0;
 }
