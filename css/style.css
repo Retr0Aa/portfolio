@@ -1,0 +1,36 @@
+body {
+    margin: 20px;
+
+    background-color: #008081;
+}
+
+footer {
+    position: fixed;
+
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.desktop-icon {
+    width: 70px;
+    height: 100px;
+
+    color: white;
+
+    background-color: transparent;
+    border: 0;
+}
+
+button:focus {
+    outline:0;
+}
+button:active {
+    outline:0;
+}
+
+.desktop-icon p {
+    margin-top: 5px;
+
+    text-align: center;
+}

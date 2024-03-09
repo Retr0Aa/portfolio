@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Buchkov</title>
+
+    <!-- Bootstrap CSS -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Pixel CSS -->
+    <link type="text/css" rel="stylesheet" href="css/pixel.css">
+
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/draggable.css">
+
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <button id="show-dialog-aboutme" class="desktop-icon show-button" onclick="showDialogAboutMe();">
+            <img width="50px" src="/images/mypc.png">
+            <p>About Me</p>
+        </button>
+    </div>
+    <div>
+        <button id="show-dialog-skills" class="desktop-icon show-button" onclick="showDialogSkills();">
+            <img width="50px" src="/images/ie.png">
+            <p>Skills</p>
+        </button>
+    </div>
+
+    <script>
+        _showDialogButtonAboutMe = document.getElementById('show-dialog-aboutme');
+        var dialogAboutMe;
+        function showDialogAboutMe() {
+            //_showDialogButtonAboutMe.disabled = true;
+            if (!dialogAboutMe) {
+                var id = 'dialog-aboutme';
+                // Instanciate the Dialog Box
+                dialogAboutMe = new DialogBox(id, callbackDialog);
+            }
+            // Show Dialog Box
+            dialogAboutMe.showDialog();
+
+            // Receive result from Dialog Box
+            function callbackDialog(btnName) {
+                _showDialogButtonAboutMe.disabled = false;
+                _showDialogButtonAboutMe.focus();
+            }
+        }
+
+
+        _showDialogButtonSkills = document.getElementById('show-dialog-skills');
+        var dialogSkills;
+        function showDialogSkills() {
+            //_showDialogButtonSkills.disabled = true;
+            if (!dialogSkills) {
+                var id = 'dialog-skills';
+                // Instanciate the Dialog Box
+                dialogSkills = new DialogBox(id, callbackDialog);
+            }
+            // Show Dialog Box
+            dialogSkills.showDialog();
+
+            // Receive result from Dialog Box
+            function callbackDialog(btnName) {
+                _showDialogButtonSkills.disabled = false;
+                _showDialogButtonSkills.focus();
+            }
+        }
+
+    </script>
+
+    <div id="dialog-aboutme" class="dialog" style="min-width:400px; min-height:280px;">
+        <div class="titlebar">About Me</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark"
+            name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
+        <div class="content">
+            <h1>Hello World!</h1>
+            <p>Hello! I'm Alexander Buchkov or <i>Retr0A</i>. I like programming.</p>
+
+            <p>I like to make games and software.</p>
+
+            <ul>
+                <li>High Student in SoftUni BUDITEL and Developer</li>
+            </ul>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-skills" class="dialog" style="min-width:400px; min-height:280px;">
+        <div class="titlebar">Skills</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark"
+            name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
+        <div class="content">
+            <ol>
+                <li>C# .NET</li>
+                <li>Unity Game Engine</li>
+                <li>Java</li>
+                <li>Javascript</li>
+                <li>C++</li>
+            </ol>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <footer>
+            <nav id="navbar-footer"
+                class="navbar navbar-main navbar-expand-lg navbar-dark justify-content-between navbar-footer">
+                <ul class="navbar-nav navbar-nav-hover flex-row align-items-center">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" role="button">
+                            <span class="nav-link-inner-text">📺 Start</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="time text-center">8:27 am</div>
+            </nav>
+        </footer>
+    </footer>
+</body>
+
+</html>
