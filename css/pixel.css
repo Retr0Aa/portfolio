@@ -2625,7 +2625,6 @@ button.section-black:focus {
     box-sizing: border-box;
     display: block;
     background: transparent;
-    z-index: 9;
     top: 0;
     left: 0;
 }

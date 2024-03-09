@@ -17,17 +17,18 @@
     <script src="js/script.js"></script>
 </head>
 
-<body>
+<body onload="updateDateTime()">
+    <script src="/js/time.js"></script>
 
     <div>
         <button id="show-dialog-aboutme" class="desktop-icon show-button" onclick="showDialogAboutMe();">
-            <img width="50px" src="/images/mypc.png">
+            <img width="50px" src="images/mypc.png">
             <p>About Me</p>
         </button>
     </div>
     <div>
         <button id="show-dialog-skills" class="desktop-icon show-button" onclick="showDialogSkills();">
-            <img width="50px" src="/images/ie.png">
+            <img width="50px" src="images/ie.png">
             <p>Skills</p>
         </button>
     </div>
@@ -128,7 +129,7 @@
                         </a>
                     </li>
                 </ul>
-                <div class="time text-center">8:27 am</div>
+                <div class="time text-center" id="time-display">0:00 PM</div>
             </nav>
         </footer>
     </footer>
