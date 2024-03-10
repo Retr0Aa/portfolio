@@ -37,7 +37,7 @@
     </div>
     <div>
         <button id="show-dialog-skills" class="desktop-icon show-button" onclick="showDialogSkills();">
-            <img width="50px" src="images/ie.png">
+            <img width="50px" src="images/trash.png">
             <p>Skills</p>
         </button>
     </div>
@@ -45,6 +45,13 @@
         <button id="show-dialog-github" class="desktop-icon show-button" onclick="showDialogGithub();">
             <img width="50px" src="images/github.png">
             <p>GitHub</p>
+        </button>
+    </div>
+    </div>
+    <div>
+        <button id="show-dialog-socialmedia" class="desktop-icon show-button" onclick="showDialogSocialMedia();">
+            <img width="50px" src="images/ie.png">
+            <p>Social Media</p>
         </button>
     </div>
 
@@ -124,9 +131,28 @@
                 _showDialogButtonGithub.focus();
             }
         }
+
+        _showDialogButtonSocialMedia = document.getElementById('show-dialog-socialmedia');
+        var dialogSocialMedia;
+        function showDialogSocialMedia() {
+            //_showDialogButtonSkills.disabled = true;
+            if (!dialogSocialMedia) {
+                var id = 'dialog-socialmedia';
+                // Instanciate the Dialog Box
+                dialogSocialMedia = new DialogBox(id, callbackDialog);
+            }
+            // Show Dialog Box
+            dialogSocialMedia.showDialog();
+
+            // Receive result from Dialog Box
+            function callbackDialog(btnName) {
+                _showDialogButtonSocialMedia.disabled = false;
+                _showDialogButtonSocialMedia.focus();
+            }
+        }
     </script>
 
-    <div id="dialog-aboutme" class="dialog" style="min-width:400px; min-height:280px;">
+    <div id="dialog-aboutme" class="dialog" style="min-width:400px; min-height:380px;">
         <div class="titlebar">About Me</div>
         <button class="btn btn-sm mr-2 btn-primary border-dark"
             name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
@@ -136,8 +162,10 @@
 
             <p>I like to make games and software.</p>
 
+            <h4>Education</h4>
             <ul>
-                <li>High Student in SoftUni BUDITEL and Developer</li>
+                <li>Meridian 22</li>
+                <li>SoftUni BUDITEL</li>
             </ul>
         </div>
         <div class="buttonpane">
@@ -148,18 +176,22 @@
         </div>
     </div>
 
-    <div id="dialog-projects" class="dialog" style="min-width:400px; min-height:280px;">
+    <div id="dialog-projects" class="dialog" style="min-width:400px; min-height:450px;">
         <div class="titlebar">Projects</div>
         <button class="btn btn-sm mr-2 btn-primary border-dark"
             name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
         <div class="content">
             <p>Most my projects can be found on <a href="https://github.com/Retr0Aa">GitHub</a></p>
+            <blockquote class="text-muted mb-0">⭐️ means it is one of my best projects.</blockquote>
+            <br />
             <ul>
-                <li>Hero Jumper</li>
-                <li>Idle Clicker</li>
-                <li>Fusion Points System</li>
-                <li>Text2Web</li>
-                <li>PensaBul</li>
+                <li><a href="https://playherojumper.com">Hero Jumper</a>⭐️</li>
+                <li><a href="https://retr0aa.github.io/emoji-painting/">emoji-painting</a>⭐️</li>
+                <li><a href="https://github.com/Retr0Aa/java-music-player">Java Music Player</a>⭐️</li>
+                <li><a href="https://github.com/Retr0Aa/MyGui">Text2Web</a></li>
+                <li><a href="https://github.com/Retr0Aa/Retr0Log">Retr0Log</a></li>
+                <li><a href="https://retr0aa.github.io/Retr0OS/">Retr0OS</a></li>
+                <li>PensaBul (Work in Progress)⭐️</li>
             </ul>
         </div>
         <div class="buttonpane">
@@ -170,11 +202,12 @@
         </div>
     </div>
 
-    <div id="dialog-skills" class="dialog" style="min-width:400px; min-height:280px;">
+    <div id="dialog-skills" class="dialog" style="min-width:400px; min-height:480px;">
         <div class="titlebar">Skills</div>
         <button class="btn btn-sm mr-2 btn-primary border-dark"
             name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
         <div class="content">
+            <h4>Programming Languages</h4>
             <ol>
                 <li>C# .NET</li>
                 <li>Unity Game Engine</li>
@@ -182,6 +215,14 @@
                 <li>Javascript</li>
                 <li>C++</li>
             </ol>
+
+            <h4>Life</h4>
+            <ul>
+                <li>English level B1</li>
+                <li>Experience in group project.</li>
+                <li>PensaBul's site Team Leader</li>
+                <li>Published game in Steam (Hero Jumper)</li>
+            </ul>
         </div>
         <div class="buttonpane">
             <div class="buttonset">
@@ -198,6 +239,24 @@
         <div class="content">
             <h1>You can find me on GitHub</h1>
             <a href="https://github.com/Retr0Aa">Go to GitHub</a>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-socialmedia" class="dialog" style="min-width:400px; min-height:280px;">
+        <div class="titlebar">Social Media</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark"
+            name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
+        <div class="content">
+            <h2>Social Medias</h2>
+            
+            <p>Instagram: @a.buchkov__ <img width="20px" src="images/instagram.png"></p>
+            <p>Gmail: retr0aalex@gmail.com <img width="20px" src="images/gmail.png"></p>
         </div>
         <div class="buttonpane">
             <div class="buttonset">
