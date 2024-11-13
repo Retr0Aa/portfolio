@@ -30,6 +30,12 @@
         </button>
     </div>
     <div>
+        <button id="show-dialog-deathdash" class="desktop-icon show-button" onclick="showDialogDeathDash();">
+            <img width="50px" src="images/deathdash.png">
+            <p>Death Dash</p>
+        </button>
+    </div>
+    <div>
         <button id="show-dialog-projects" class="desktop-icon show-button" onclick="showDialogProjects();">
             <img width="50px" src="images/documents.png">
             <p>Projects</p>
@@ -67,6 +73,25 @@
             }
             // Show Dialog Box
             dialogAboutMe.showDialog();
+
+            // Receive result from Dialog Box
+            function callbackDialog(btnName) {
+                _showDialogButtonAboutMe.disabled = false;
+                _showDialogButtonAboutMe.focus();
+            }
+        }
+
+        _showDialogButtonDeathDash = document.getElementById('show-dialog-deathdash');
+        var dialogDeathDash;
+        function showDialogDeathDash() {
+            //_showDialogButtonAboutMe.disabled = true;
+            if (!dialogAboutMe) {
+                var id = 'dialog-deathdash';
+                // Instanciate the Dialog Box
+                dialogDeathDash = new DialogBox(id, callbackDialog);
+            }
+            // Show Dialog Box
+            dialogDeathDash.showDialog();
 
             // Receive result from Dialog Box
             function callbackDialog(btnName) {
@@ -164,9 +189,30 @@
 
             <h4>Education</h4>
             <ul>
-                <li>Meridian 22</li>
                 <li>SoftUni BUDITEL</li>
+                <li>Fusion School</li>
+                <li>Meridian 22</li>
             </ul>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-deathdash" class="dialog" style="min-width:400px; min-height:380px;">
+        <div class="titlebar">About Me</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark"
+            name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
+        <div class="content">
+            <h1 class="deathdashgradient">Death Dash</h1>
+            <p>Death Dash is a fast-paced, minimalist endless runner game designed to test your reflexes.</p>
+
+            <p>Currently, Death Dash is in closed beta. If you want to participate, fill the form in the website.</p>
+
+            <a>Find more information at <a href="https://deathdash.net">deathdash.net</a>
         </div>
         <div class="buttonpane">
             <div class="buttonset">
@@ -218,10 +264,13 @@
 
             <h4>Life</h4>
             <ul>
-                <li>English level B1</li>
-                <li>Experience in group project.</li>
-                <li>PensaBul's site Team Leader</li>
+                <li>Published game for mobile (Death Dash)</li>
                 <li>Published game in Steam (Hero Jumper)</li>
+                <li>English level B1</li>
+                <li>Experience in group projects.</li>
+                <li>PensaBul's site Team Leader</li>
+                <br />
+                <li>I also release music. Find me as Buchkata.</li>
             </ul>
         </div>
         <div class="buttonpane">
@@ -254,7 +303,7 @@
             name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
         <div class="content">
             <h2>Social Medias</h2>
-            
+
             <p>Instagram: @a.buchkov__ <img width="20px" src="images/instagram.png"></p>
             <p>Gmail: retr0aalex@gmail.com <img width="20px" src="images/gmail.png"></p>
         </div>
@@ -273,7 +322,7 @@
                 <ul class="navbar-nav navbar-nav-hover flex-row align-items-center">
                     <li class="nav-item">
                         <a href="index.html" class="nav-link" role="button">
-                            <span class="nav-link-inner-text">📺 Start</span>
+                            <span class="nav-link-inner-text"><img src="/images/start.png" width="16px"> Start</span>
                         </a>
                     </li>
                 </ul>

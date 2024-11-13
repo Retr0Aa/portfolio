@@ -38,3 +38,9 @@ button:active {
 
     text-align: center;
 }
+
+.deathdashgradient {
+  background: linear-gradient(to right, #e40000, #0067cd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
