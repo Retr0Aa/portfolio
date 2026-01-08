@@ -176,7 +176,7 @@
         <button class="btn btn-sm mr-2 btn-primary border-dark"
             name="close"><b>X</b></button><!-- enter symbol here like &times; or &#x1f6c8; or use the default X if empty --></button>
         <div class="content">
-            <h1>Hello World!</h1>
+            <h1 class="helloworldgradient">Hello World!</h1>
             <p>Hello! I'm Alexander Buchkov or <i>Retr0A</i>. I like programming.</p>
 
             <p>I like to make games and software.</p>
@@ -220,19 +220,21 @@
         <div class="content">
             <p>Most my projects can be found on <a href="https://github.com/Retr0Aa">GitHub</a></p>
             <ul>
-                <li><a href="https://deathdash.net">Death Dash</a></li>
                 <li><a href="https://store.steampowered.com/app/2153600/Hero_Jumper/">Hero Jumper</a></li>
                 <li><a href="https://github.com/Retr0Aa/buchka-gram">BuchkaGram</a></li>
                 <li><a href="https://github.com/Retr0Aa/cs-blocks">CS Blocks</a></li>
                 <li><a href="https://retr0aa.github.io/emoji-painting/">emoji-painting</a></li>
+                <li><a href="https://velocitydrift.netlify.app/">velocity-drift</a></li>
             </ul>
             <br />
-            <p>These projects are made for practice only or for school:</p>
+            <p>Practical Projects:</p>
             <ul>
                 <li><a href="https://github.com/Retr0Aa/java-music-player">Java Music Player</a></li>
                 <li><a href="https://github.com/Retr0Aa/snake-game">snake-game</a></li>
                 <li><a href="https://github.com/Retr0Aa/Besenica-SoftUni">Besenica-SoftUni</a></li>
                 <li><a href="https://github.com/Retr0Aa/super-mario-clone">super-mario-clone</a></li>
+                <li><a href="https://github.com/Retr0Aa/EduTrack">EduTrack</a></li>
+                <li><a href="https://github.com/Retr0Aa/tennis-score-app">tennis-score-app</a></li>
             </ul>
         </div>
         <div class="buttonpane">
@@ -332,6 +334,47 @@
             </nav>
         </footer>
     </footer>
+
+    <script>
+        window.onload = function () {
+            updateDateTime();
+
+            const dialogs = [
+                "dialog-projects",
+                "dialog-aboutme"
+            ];
+
+            dialogs.forEach(id => {
+                document.getElementById(id).removeAttribute("data-init");
+
+                // open
+                if (id === "dialog-projects") showDialogProjects();
+                if (id === "dialog-aboutme") showDialogAboutMe();
+
+                const d = document.getElementById(id);
+                if (!d) return;
+
+                d.dataset.init = "1";
+                d.style.position = "absolute";
+
+                const factor = Math.random() * 0.25 + 0.85;
+                const w = d.offsetWidth * factor;
+                const h = d.offsetHeight * factor;
+
+                d.style.width = w + "px";
+                d.style.height = h + "px";
+
+                const maxX = window.innerWidth - w;
+                const maxY = window.innerHeight - h - 40;
+
+                d.style.left = Math.random() * maxX + "px";
+                d.style.top = Math.random() * maxY + "px";
+            });
+
+            // About Me on top
+            document.getElementById("dialog-aboutme").style.zIndex = 10;
+        };
+    </script>
 </body>
 
 </html>

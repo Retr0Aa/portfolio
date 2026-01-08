@@ -44,3 +44,9 @@ button:active {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.helloworldgradient {
+  background: linear-gradient(to right, #e4008d, #1a1cbd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
