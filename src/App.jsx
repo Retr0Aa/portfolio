@@ -337,8 +337,8 @@ export default function App() {
 
             <Window title="Contact Me" isOpen={windows.contact.isOpen} onClose={() => closeWindow("contact")} onFocus={() => focusWindow("contact")} zIndex={windows.contact.zIndex} defaultPosition={positions.contact} defaultSize={{ width: 400, height: 280 }}>
                 <h2>Contact Information</h2>
-                <p className="d-flex align-items-center">Instagram: @a.buchkov__ <img className="ml-2" width="20px" src="/images/instagram.png" alt="IG" /></p>
-                <p className="d-flex align-items-center">Gmail: retr0aalex@icloud.com <img className="ml-2" width="20px" src="/images/gmail.png" alt="Email" /></p>
+                <p className="d-flex align-items-center">Instagram: @a.buchkov__ <img className="ml-2" width="20px" src="./images/instagram.png" alt="IG" /></p>
+                <p className="d-flex align-items-center">Gmail: retr0aalex@icloud.com <img className="ml-2" width="20px" src="./images/gmail.png" alt="Email" /></p>
             </Window>
 
             <Taskbar />
