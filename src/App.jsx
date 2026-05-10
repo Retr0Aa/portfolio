@@ -28,7 +28,7 @@ function Window({
 }) {
     const [position, setPosition] = useState(defaultPosition || { x: 100, y: 100 });
     const [size, setSize] = useState(defaultSize);
-    
+
     // --- Mobile Detection Logic ---
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -65,7 +65,7 @@ function Window({
     // --- Resizing Logic ---
     const startResize = (e, axis) => {
         if (isMobile) return;
-        
+
         e.preventDefault();
         e.stopPropagation();
 
@@ -100,7 +100,7 @@ function Window({
     if (!isOpen) return null;
 
     // Determine inline styles based on whether it is mobile or desktop
-    const windowStyles = isMobile 
+    const windowStyles = isMobile
         ? {
             display: "block",
             position: "absolute",
@@ -109,7 +109,7 @@ function Window({
             width: "100%",
             height: "calc(100% - 40px)", // Leaves room at the bottom for the taskbar
             zIndex: zIndex
-        } 
+        }
         : {
             display: "block",
             position: "absolute",
@@ -132,7 +132,7 @@ function Window({
                 onMouseDown={(e) => {
                     e.preventDefault();
                     if (isMobile) return; // Disables dragging on mobile
-                    
+
                     setDragging(true);
                     offset.current = {
                         x: e.clientX - position.x,
@@ -144,8 +144,8 @@ function Window({
                 <span>{title}</span>
             </div>
 
-            <button 
-                className="btn btn-sm mr-2 btn-primary border-dark" 
+            <button
+                className="btn btn-sm mr-2 btn-primary border-dark"
                 style={{ position: 'absolute', top: '2px', right: '2px', zIndex: 10 }}
                 onClick={onClose}
             >
@@ -211,7 +211,7 @@ function Taskbar() {
                     <li className="nav-item">
                         <button className="nav-link btn btn-primary border-dark text-dark px-2 py-1" style={{ fontWeight: 'bold' }}>
                             <span className="nav-link-inner-text d-flex align-items-center">
-                                <img src="/images/start.png" width="16" alt="Start" className="mr-1" /> Start
+                                <img src="./images/start.png" width="16" alt="Start" className="mr-1" /> Start
                             </span>
                         </button>
                     </li>
@@ -228,7 +228,7 @@ function Taskbar() {
 
 export default function App() {
     const [topZIndex, setTopZIndex] = useState(10);
-    
+
     // Manage windows state: open status and their specific z-index
     const [windows, setWindows] = useState({
         about: { isOpen: true, zIndex: 10 },
@@ -244,7 +244,7 @@ export default function App() {
     useEffect(() => {
         const generateRandomPosition = (w, h) => {
             const maxX = window.innerWidth - w;
-            const maxY = window.innerHeight - h - 60; 
+            const maxY = window.innerHeight - h - 60;
             return {
                 x: Math.max(0, Math.random() * maxX),
                 y: Math.max(0, Math.random() * maxY)
@@ -290,11 +290,11 @@ export default function App() {
         <div className="desktop h-100 w-100 p-3" style={{ position: 'relative', overflow: 'hidden' }}>
             {/* Desktop Icons */}
             <div className="desktop-icons-container d-flex flex-column align-items-start" style={{ width: '100px' }}>
-                <DesktopIcon icon="/images/mypc.png" title="About Me" onClick={() => openWindow("about")} />
-                <DesktopIcon icon="/images/documents.png" title="Projects" onClick={() => openWindow("projects")} />
-                <DesktopIcon icon="/images/trash.png" title="Skills" onClick={() => openWindow("skills")} />
-                <DesktopIcon icon="/images/github.png" title="GitHub" onClick={() => openWindow("github")} />
-                <DesktopIcon icon="/images/ie.png" title="Contact Me" onClick={() => openWindow("contact")} />
+                <DesktopIcon icon="./images/mypc.png" title="About Me" onClick={() => openWindow("about")} />
+                <DesktopIcon icon="./images/documents.png" title="Projects" onClick={() => openWindow("projects")} />
+                <DesktopIcon icon="./images/trash.png" title="Skills" onClick={() => openWindow("skills")} />
+                <DesktopIcon icon="./images/github.png" title="GitHub" onClick={() => openWindow("github")} />
+                <DesktopIcon icon="./images/ie.png" title="Contact Me" onClick={() => openWindow("contact")} />
             </div>
 
             {/* Windows */}
