@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="images/mypc.png">
+
+    <title>Alexander Buchkov</title>
+
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/pixel.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/draggable.css">
+
+    <script src="js/script.js"></script>
+    <script src="js/time.js"></script>
+</head>
+
+<body>
+    <div class="desktop-icons-container">
+        <div>
+            <button class="desktop-icon show-button" onclick="openWindow('dialog-aboutme', this);">
+                <img width="50px" src="images/mypc.png" alt="About Me">
+                <p>About Me</p>
+            </button>
+        </div>
+        <div>
+            <button class="desktop-icon show-button" onclick="openWindow('dialog-projects', this);">
+                <img width="50px" src="images/documents.png" alt="Projects">
+                <p>Projects</p>
+            </button>
+        </div>
+        <div>
+            <button class="desktop-icon show-button" onclick="openWindow('dialog-skills', this);">
+                <img width="50px" src="images/trash.png" alt="Skills">
+                <p>Skills</p>
+            </button>
+        </div>
+        <div>
+            <button class="desktop-icon show-button" onclick="openWindow('dialog-github', this);">
+                <img width="50px" src="images/github.png" alt="GitHub">
+                <p>GitHub</p>
+            </button>
+        </div>
+        <div>
+            <button class="desktop-icon show-button" onclick="openWindow('dialog-socialmedia', this);">
+                <img width="50px" src="images/ie.png" alt="Contact Me">
+                <p>Contact Me</p>
+            </button>
+        </div>
+    </div>
+
+    <div id="dialog-aboutme" class="dialog" style="min-width:400px; min-height:380px;">
+        <div class="titlebar">About Me</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark" name="close"><b>X</b></button>
+        <div class="content">
+            <h1 class="helloworldgradient">Hello World!</h1>
+            <p>Hello! I'm Alexander Buchkov or <i>Retr0A</i>. I like programming.</p>
+            <p>I like to make games and software.</p>
+
+            <h4>Education</h4>
+            <ul>
+                <li>SoftUni BUDITEL</li>
+                <li>Fusion School</li>
+                <li>Meridian 22</li>
+            </ul>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-deathdash" class="dialog" style="min-width:400px; min-height:380px;">
+        <div class="titlebar">Death Dash</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark" name="close"><b>X</b></button>
+        <div class="content">
+            <h1 class="deathdashgradient">Death Dash</h1>
+            <p>Death Dash is a fast-paced, minimalist endless runner game designed to test your reflexes.</p>
+            <p>Find more information at <a href="https://deathdash.net" target="_blank">deathdash.net</a></p>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-projects" class="dialog" style="min-width:400px; min-height:450px;">
+        <div class="titlebar">Projects</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark" name="close"><b>X</b></button>
+        <div class="content">
+            <p>Most my projects can be found on <a href="https://github.com/Retr0Aa" target="_blank">GitHub</a></p>
+            <p>Here are some of my projects I've made over the years:</p>
+            <ul>
+                <li><a href="https://retr0aa.github.io/emoji-painting/">emoji-painting</a></li>
+                <li><a href="https://velocitydrift.netlify.app/">velocity-drift</a></li>
+                <li><a href="https://github.com/Retr0Aa/java-music-player">Java Music Player</a></li>
+                <li><a href="https://github.com/Retr0Aa/snake-game">snake-game</a></li>
+                <li><a href="https://github.com/Retr0Aa/hangman-softuni">hangman-softuni</a></li>
+                <li><a href="https://github.com/Retr0Aa/super-mario-clone">super-mario-clone</a></li>
+                <li><a href="https://github.com/Retr0Aa/tennis-score-app">tennis-score-app</a></li>
+                <li><a href="https://github.com/Retr0Aa/VetSense">VetSense</a></li>
+            </ul>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-skills" class="dialog" style="min-width:400px; min-height:480px;">
+        <div class="titlebar">Skills</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark" name="close"><b>X</b></button>
+        <div class="content">
+            <h4>Programming Languages</h4>
+            <ol>
+                <li>C# .NET</li>
+                <li>Unity Game Engine</li>
+                <li>Java</li>
+                <li>Javascript</li>
+                <li>C++</li>
+                <li>Unreal Engine</li>
+                <li>Godot Game Engine (GDScript)</li>
+            </ol>
+
+            <h4>Life</h4>
+            <ul>
+                <li>Published game for mobile (Death Dash)</li>
+                <li>Published game in Steam (Hero Jumper)</li>
+                <li>English level B1</li>
+                <li>Experience in group projects.</li>
+            </ul>
+
+            <h4>Additional</h4>
+            <ul>
+                <li>Music Production</li>
+                <li>Video Editing</li>
+                <li>Basic Photoshop Skills</li>
+            </ul>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-github" class="dialog" style="min-width:400px; min-height:280px;">
+        <div class="titlebar">GitHub</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark" name="close"><b>X</b></button>
+        <div class="content">
+            <h1>You can find me on GitHub</h1>
+            <a href="https://github.com/Retr0Aa" target="_blank">Go to GitHub</a>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-socialmedia" class="dialog" style="min-width:400px; min-height:280px;">
+        <div class="titlebar">Contact Me</div>
+        <button class="btn btn-sm mr-2 btn-primary border-dark" name="close"><b>X</b></button>
+        <div class="content">
+            <h2>Contact Information</h2>
+            <p>Instagram: @a.buchkov__ <img width="20px" src="images/instagram.png" alt="IG"></p>
+            <p>Gmail: retr0aalex@icloud.com <img width="20px" src="images/gmail.png" alt="Email"></p>
+        </div>
+        <div class="buttonpane">
+            <div class="buttonset">
+                <button class="btn btn-sm mr-2 btn-primary border-dark" type="button" name="ok">OK</button>
+                <button class="btn btn-sm mr-2 btn-danger border-dark" name="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <nav id="navbar-footer" class="navbar navbar-main navbar-expand-lg navbar-dark justify-content-between navbar-footer">
+            <ul class="navbar-nav navbar-nav-hover flex-row align-items-center">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" role="button">
+                        <span class="nav-link-inner-text"><img src="/images/start.png" width="16px" alt="Start"> Start</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="time text-center" id="time-display">0:00 PM</div>
+        </nav>
+    </footer>
+
+    <script>
+        // Store instances of opened dialogs to prevent re-initializing
+        const dialogInstances = {};
+
+        // Unified function to handle opening any dialog
+        function openWindow(dialogId, btnElement = null) {
+            if (!dialogInstances[dialogId]) {
+                dialogInstances[dialogId] = new DialogBox(dialogId, function(btnName) {
+                    if (btnElement) {
+                        btnElement.disabled = false;
+                        btnElement.focus();
+                    }
+                });
+            }
+            dialogInstances[dialogId].showDialog();
+        }
+
+        // Initialization Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if updateDateTime exists in time.js and execute it
+            if (typeof updateDateTime === 'function') {
+                updateDateTime();
+            }
+
+            const defaultDialogs = [
+                "dialog-projects",
+                "dialog-aboutme"
+            ];
+
+            defaultDialogs.forEach(id => {
+                // Remove raw data-init so DialogBox handles it fresh
+                document.getElementById(id).removeAttribute("data-init");
+
+                // Open the dialog
+                openWindow(id);
+
+                const d = document.getElementById(id);
+                if (!d) return;
+
+                // Randomize positions on screen
+                d.dataset.init = "1";
+                d.style.position = "absolute";
+
+                const factor = Math.random() * 0.25 + 0.85;
+                const w = d.offsetWidth * factor;
+                const h = d.offsetHeight * factor;
+
+                d.style.width = w + "px";
+                d.style.height = h + "px";
+
+                const maxX = window.innerWidth - w;
+                const maxY = window.innerHeight - h - 40;
+
+                d.style.left = Math.random() * maxX + "px";
+                d.style.top = Math.random() * maxY + "px";
+            });
+
+            // Ensure About Me dialog pops to the front on load
+            const aboutMe = document.getElementById("dialog-aboutme");
+            if (aboutMe) aboutMe.style.zIndex = 10;
+        });
+    </script>
+</body>
+
+</html>
