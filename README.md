@@ -1,51 +1,16 @@
-# Portfolio
+# React + Vite
 
-A modern, responsive portfolio website built with React and Vite.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## About
+Currently, two official plugins are available:
 
-This is a personal portfolio showcasing my projects, skills, and experience. Built with modern web technologies for fast performance and excellent user experience.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Tech Stack
+## React Compiler
 
-- **React** - JavaScript library for building user interfaces
-- **Vite** - Next generation frontend build tool
-- **JavaScript (ES6+)** - Modern JavaScript standards
-- **CSS** - Styling with custom CSS and Bootstrap
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Features
+## Expanding the ESLint configuration
 
-- ⚡ Fast performance with Vite's optimized build
-- 📱 Fully responsive design
-- 🎨 Modern UI with custom styling
-- ♿ Accessible HTML structure
-- 📦 Lightweight and efficient
-
-## Project Structure
-
-```
-portfolio/
-├── src/
-│   ├── components/       # React components
-│   ├── assets/          # Images and static files
-│   ├── css/             # Stylesheets
-│   ├── App.jsx          # Main App component
-│   ├── main.jsx         # React entry point
-│   └── index.html       # HTML template
-├── public/              # Static assets
-├── package.json         # Project dependencies
-├── vite.config.js       # Vite configuration
-├── eslint.config.js     # ESLint configuration
-└── README.md            # This file
-```
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Contact
-
-Feel free to reach out if you have any questions or opportunities!
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

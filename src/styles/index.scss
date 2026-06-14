@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("../assets/sf-compact-text-heavy.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bs-body-bg: #161516 !important;
+  --bs-border-width: 0px;
+  --bs-link-color: white !important;
+  --bs-nav-link-hover-color: white !important;
+  --bs-offcanvas-height: 10vh;
+  --bs-border-radius: 7px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ul {
+  text-align: left;
+}
+
+.sf-font {
+  font-family: "MyFont", sans-serif !important;
+}
